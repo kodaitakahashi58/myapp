@@ -1,0 +1,48 @@
+<%= form_with model: @trade, local: true do |f| %>
+  <% if @trade.errors.any? %>
+    <div style="color: red;">
+      <ul>
+        <% @trade.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= f.label :stock_name, "銘柄名" %>
+    <%= f.text_field :stock_name %>
+  </div>
+
+  <div>
+    <%= f.label :stock_code, "銘柄コード" %>
+    <%= f.text_field :stock_code %>
+  </div>
+
+  <div>
+    <%= f.label :trade_type, "売買区分" %>
+    <%= f.select :trade_type, Trade.trade_types.keys.map { |t| [t == "buy" ? "買い" : "売り", t] } %>
+  </div>
+
+  <div>
+    <%= f.label :shares, "株数" %>
+    <%= f.number_field :shares %>
+  </div>
+
+  <div>
+    <%= f.label :price, "価格" %>
+    <%= f.number_field :price, step: 0.01 %>
+  </div>
+
+  <div>
+    <%= f.label :traded_on, "売買日" %>
+    <%= f.date_field :traded_on %>
+  </div>
+
+  <div>
+    <%= f.label :reason, "売買理由" %>
+    <%= f.text_area :reason %>
+  </div>
+
+  <%= f.submit %>
+<% end %>

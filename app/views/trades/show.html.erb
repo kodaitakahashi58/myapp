@@ -1,0 +1,13 @@
+<h1>取引記録の詳細</h1>
+
+<p><strong>銘柄名:</strong> <%= @trade.stock_name %></p>
+<p><strong>銘柄コード:</strong> <%= @trade.stock_code %></p>
+<p><strong>売買区分:</strong> <%= @trade.buy? ? "買い" : "売り" %></p>
+<p><strong>株数:</strong> <%= @trade.shares %></p>
+<p><strong>価格:</strong> <%= @trade.price %></p>
+<p><strong>売買日:</strong> <%= @trade.traded_on %></p>
+<p><strong>理由:</strong> <%= @trade.reason %></p>
+
+<%= link_to "編集", edit_trade_path(@trade) %>
+<%= link_to "削除", trade_path(@trade), data: { turbo_method: :delete, turbo_confirm: "本当に削除しますか？" } %>
+<%= link_to "一覧に戻る", trades_path %>

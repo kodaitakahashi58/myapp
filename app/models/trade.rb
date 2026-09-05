@@ -1,6 +1,8 @@
 class Trade < ApplicationRecord
   belongs_to :user
 
+  enum trade_type: { buy: 0, sell: 1 }
+
   validates :stock_name, presence: true
   validates :stock_code, presence: true
   validates :trade_type, presence: true
