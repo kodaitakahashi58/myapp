@@ -1,0 +1,26 @@
+<h1>取引一覧</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>銘柄名</th>
+      <th>銘柄コード</th>
+      <th>売買種別</th>
+      <th>株数</th>
+      <th>価格</th>
+      <th>取引日</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @trades.each do |trade| %>
+      <tr>
+        <td><%= trade.stock_name %></td>
+        <td><%= trade.stock_code %></td>
+        <td><%= trade.trade_type %></td>
+        <td><%= trade.shares %></td>
+        <td><%= trade.price %></td>
+        <td><%= trade.traded_on %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -1,0 +1,13 @@
+<%= form_with model: post, local: true do |f| %>
+  <div>
+    <%= f.label :title, "タイトル" %>
+    <%= f.text_field :title %>
+  </div>
+
+  <div>
+    <%= f.label :body, "本文" %>
+    <%= f.text_area :body %>
+  </div>
+
+  <%= f.submit %>
+<% end %>

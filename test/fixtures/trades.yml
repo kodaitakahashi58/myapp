@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  stock_name: MyString
+  stock_code: MyString
+  trade_type: 1
+  shares: 1
+  price: 9.99
+  traded_on: 2026-09-04
+  reason: MyText
+
+two:
+  user: two
+  stock_name: MyString
+  stock_code: MyString
+  trade_type: 1
+  shares: 1
+  price: 9.99
+  traded_on: 2026-09-04
+  reason: MyText

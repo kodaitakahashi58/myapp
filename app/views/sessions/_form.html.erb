@@ -1,0 +1,14 @@
+<%# app/views/sessions/_form.html.erb %>
+<%= form_with url: session_path, scope: :session, local: true do |f| %>
+  <div>
+    <%= f.label :email, "メールアドレス" %>
+    <%= f.email_field :email %>
+  </div>
+
+  <div>
+    <%= f.label :password, "パスワード" %>
+    <%= f.password_field :password %>
+  </div>
+
+  <%= f.submit "ログインする" %>
+<% end %>
